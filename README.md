@@ -22,3 +22,4 @@ You may also see any lint errors in the console.
 
 # React Blog를 위한 공통 폴더구조
 
+<img width="1000" alt="스크린샷 2024-04-29 오후 2 02 54" src="https://github.com/kjh5555/ItgoBlog/assets/69375870/d112d62f-6b05-4e5d-bd88-73d088746c66">
