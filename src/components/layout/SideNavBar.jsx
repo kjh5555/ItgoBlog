@@ -5,6 +5,10 @@ const Container = styled.div`
   background: blue;
 `;
 
-export const Header = () => {
-  return <Container>여기는 헤더 영역입니다.</Container>;
+export const SideNavBar = () => {
+  return (
+    <Container>
+      <div>사이드 메뉴 입니다.</div>
+    </Container>
+  );
 };
