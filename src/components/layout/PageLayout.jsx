@@ -13,9 +13,16 @@ export const PageLayout = () => {
   );
 };
 const Layout = styled.div`
-  width: 100vw;
   height: 100vh;
-  background: red;
   display: flex;
-  align-items: center;
+
+  & > main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100%;
+    padding: 2.4rem;
+    margin-left: 26rem;
+    overflow-y: auto;
+  }
 `;
