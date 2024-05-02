@@ -22,7 +22,6 @@ const Layout = styled.div`
     flex-grow: 1;
     height: 100%;
     padding: 2.4rem;
-    margin-left: 26rem;
     overflow-y: auto;
   }
 `;
