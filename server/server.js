@@ -31,7 +31,14 @@ const cors = require("cors");
 app.use(cors());
 // API 엔드포인트 설정
 app.get("/api/posts", (req, res) => {
-  res.json(data);
+  console.log("post!");
+  return res.json(data);
+});
+
+app.post("/api/posts", (req, res) => {
+  const newPost = req.body;
+  data.push(newPost);
+  res.status(201).json(data);
 });
 
 app.listen(8080, function () {
