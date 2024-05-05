@@ -1,9 +1,20 @@
+import Layout from "./components/layout/Layout";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import MainPage from "./pages/MainPage";
+import PostWritePage from "./pages/PostWritePage";
+import PostViewPage from "./pages/PostViewPage";
 
 function App() {
   return (
-    <div className="App">
-       B팀의 시작
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Layout />}>
+          <Route index element={<MainPage />} />
+          <Route path="/write" element={<PostWritePage />} />
+          <Route path="/:postId" element={<PostViewPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
