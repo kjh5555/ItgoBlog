@@ -1,10 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Button = () => {
+const Button = (props) => {
+  const { title, path } = props;
+
   return (
-    <div>
-      <button>add</button>
-    </div>
+    <Link to={path}>
+      <button>{title}</button>
+    </Link>
   );
 };
 

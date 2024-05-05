@@ -6,7 +6,7 @@ const PostList = ({ posts }) => {
   return (
     <>
       {posts?.map((post) => {
-        return <PostListItem key={post.id} post={post} />;
+        return <PostListItem key={post.id} post={post} id={post.id} />;
       })}
     </>
   );

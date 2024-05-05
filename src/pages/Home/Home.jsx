@@ -1,7 +1,7 @@
 import React from "react";
 
 import { usePostsContext } from "../../contexts/PostsContext";
-import { PostList } from "../Post";
+import { PostList } from "../../components/post";
 import { Button } from "../../components/common";
 
 const Home = () => {
@@ -33,7 +33,10 @@ const Home = () => {
   // }, []);
   return (
     <>
-      <Button></Button>
+      <>
+        <Button title={"추가하기"} path={"/post/write"} />
+      </>
+
       {posts.length > 0 && <PostList posts={posts} />}
     </>
   );

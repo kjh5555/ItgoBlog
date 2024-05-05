@@ -1,3 +1,5 @@
-import PostList from "./PostList";
+import Detail from "./Detail";
+import Update from "./Update";
+import Write from "./Write";
 
-export { PostList };
+export { Detail, Update, Write };
