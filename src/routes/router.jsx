@@ -1,6 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import { PageLayout } from "../components/layout/PageLayout";
 import Home from "../pages/Home";
+
+import PostForm from "../pages/PostForm";
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -9,6 +12,10 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "post/:id",
+        element: <PostForm />,
       },
     ],
   },
