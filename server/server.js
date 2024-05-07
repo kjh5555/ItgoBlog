@@ -1,5 +1,4 @@
 const express = require("express");
-const path = require("path");
 const app = express();
 
 const data = [
@@ -30,15 +29,44 @@ app.use(express.json());
 const cors = require("cors");
 app.use(cors());
 // API 엔드포인트 설정
+//get
 app.get("/api/posts", (req, res) => {
   console.log("post!");
   return res.json(data);
 });
-
+//post
 app.post("/api/posts", (req, res) => {
   const newPost = req.body;
   data.push(newPost);
   res.status(201).json(data);
+});
+//put
+app.put("/api/posts/:id", (req, res) => {
+  const updatePost = data.find((post) => {
+    if (isNaN(req.params.id)) {
+      return post.id === req.params.id;
+    } else {
+      return post.id === parseInt(req.params.id);
+    }
+  });
+  if (!updatePost) return res.status(404).send("no data");
+  updatePost.title = req.body.title;
+  updatePost.content = req.body.content;
+  return res.json(data);
+});
+//delete
+app.delete("/api/posts/:id", (req, res) => {
+  const deletePost = data.find((post) => {
+    if (isNaN(req.params.id)) {
+      return post.id === req.params.id;
+    } else {
+      return post.id === parseInt(req.params.id);
+    }
+  });
+  if (!deletePost) return res.status(404).send("no data");
+  const index = data.indexOf(deletePost);
+  data.splice(index, 1);
+  return res.json(data);
 });
 
 app.listen(8080, function () {

@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { Layout } from "../components/layout";
 import { Home } from "../pages/Home";
 import { Write, Detail, Update } from "../pages/Post";
+import { NotFound } from "../components/fallback";
 
 export const router = createBrowserRouter([
   {
@@ -31,5 +32,6 @@ export const router = createBrowserRouter([
         ],
       },
     ],
+    errorElement: <NotFound />,
   },
 ]);
