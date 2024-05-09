@@ -11,7 +11,7 @@ function App() {
         <Route exact path="/" element={<Layout />}>
           <Route index element={<MainPage />} />
           <Route path="/write" element={<PostWritePage />} />
-          <Route path="/:postId" element={<PostViewPage />} />
+          <Route path="/:id" element={<PostViewPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

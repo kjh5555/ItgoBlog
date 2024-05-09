@@ -1,10 +1,12 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const PostWritePage = () => {
   const [posts, setPosts] = useState(!localStorage.getItem('posts') ? [] : JSON.parse(localStorage.getItem('posts')));
   const [content, setContent] = useState();
   const [title, setTitle] = useState();
+  const navigate = useNavigate();
 
   console.log(content);
 
@@ -13,8 +15,9 @@ const PostWritePage = () => {
     setPosts([...posts, { title: title, content: content }]);
     localStorage.setItem(
       "posts",
-      JSON.stringify([...posts, { title: title, content: content }])
+      JSON.stringify([...posts, { id: 1, title: title, content: content }])
     );
+    navigate("/");
   };
 
   return (
@@ -36,16 +39,6 @@ const PostWritePage = () => {
         />
         <button>ok</button>
       </form>
-
-      <div>
-        {posts?.map((data, index) => {
-          return (
-            <p>
-              {data.title} / {data.content}
-            </p>
-          );
-        })}
-      </div>
     </div>
   );
 };
