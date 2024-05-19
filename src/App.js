@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import PostWritePage from "./pages/PostWritePage";
 import PostViewPage from "./pages/PostViewPage";
+import PostDetail from "./pages/PostDetail";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route index element={<MainPage />} />
           <Route path="/write" element={<PostWritePage />} />
           <Route path="/:id" element={<PostViewPage />} />
+          <Route path="/edit" element={<PostDetail />} />
         </Route>
       </Routes>
     </BrowserRouter>

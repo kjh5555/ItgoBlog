@@ -8,6 +8,7 @@ function PostListItem(props) {
       {props.posts?.map((post, index) => {
         return (
           <p
+          key={post.id}
           onClick={() => {
             navigate(`/${post.id}`);
           }}

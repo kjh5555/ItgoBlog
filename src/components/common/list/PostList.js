@@ -1,14 +1,16 @@
 import PostListItem from "../list/PostListItem";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import PostViewPage from "../../../pages/PostViewPage";
 
-function PostList() {
+function PostList(props) {
   const [posts, setPosts] = useState(
     !localStorage.getItem("posts")
       ? []
       : JSON.parse(localStorage.getItem("posts"))
   );
   const navigate = useNavigate();
+  console.log(props)
 
   return (
     <div>

@@ -1,23 +1,20 @@
 import React from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const PostWritePage = () => {
   const [posts, setPosts] = useState(!localStorage.getItem('posts') ? [] : JSON.parse(localStorage.getItem('posts')));
+  const location = useLocation();
   const [content, setContent] = useState();
   const [title, setTitle] = useState();
   const navigate = useNavigate();
-
-  console.log(content);
-
+ 
   const handleSubmit = (event) => {
     event.preventDefault();
     setPosts([...posts, { title: title, content: content }]);
-    localStorage.setItem(
-      "posts",
-      JSON.stringify([...posts, { id: 1, title: title, content: content }])
-    );
+    localStorage.setItem("posts", JSON.stringify([...posts, {id: crypto.randomUUID(), title: title, content: content }]));
     navigate("/");
+    alert("글 작성을 완료하시겠습니까?")
   };
 
   return (
