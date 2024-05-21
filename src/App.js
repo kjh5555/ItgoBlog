@@ -9,6 +9,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* '/' < 기본페이지라는 뜻 */}
         <Route exact path="/" element={<Layout />}>
           <Route index element={<MainPage />} />
           <Route path="/write" element={<PostWritePage />} />

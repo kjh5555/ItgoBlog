@@ -10,6 +10,7 @@ function PostListItem(props) {
           <p
           key={post.id}
           onClick={() => {
+            // (`/${post.id} < useParams로 파라미터로 넘겨주는거`);
             navigate(`/${post.id}`);
           }}
           >

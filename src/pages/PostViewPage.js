@@ -5,6 +5,7 @@ import PostDetail from "./PostDetail";
 
 const PostViewPage = (props) => {
   const navigate = useNavigate()
+  // useparams < 파라미터를 쓰겠다는 뜻 localhost:3000/ (이부분이 파라미터)
   const { id } = useParams();
   const [posts, setPosts] = useState(
     !localStorage.getItem("posts")
@@ -24,9 +25,6 @@ const PostViewPage = (props) => {
     console.log(id)
 
     const remainingPosts = posts.filter(post => post.id !== id);
-
-    setPosts(remainingPosts);
-    // localStorage.removeItem(posts.id)
 
     localStorage.setItem("posts", JSON.stringify(remainingPosts));
   
